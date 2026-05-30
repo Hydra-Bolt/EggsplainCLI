@@ -1,0 +1,32 @@
+[package]
+name = "eggsplain-cli"
+description = "CLI binary for eggsplain — a multi-provider AI agent with tool orchestration"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+keywords = ["ai", "agent", "cli", "llm", "anthropic"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "eggsplain"
+path = "src/main.rs"
+
+[dependencies]
+eggsplain-agent.workspace    = true
+eggsplain-compact.workspace  = true
+eggsplain-config.workspace   = true
+eggsplain-memory.workspace   = true
+eggsplain-providers.workspace = true
+eggsplain-tools.workspace    = true
+eggsplain-mcp.workspace      = true
+eggsplain-protocol.workspace = true
+eggsplain-skills.workspace   = true
+
+tokio.workspace              = true
+anyhow.workspace             = true
+clap.workspace               = true
+tracing.workspace            = true
+tracing-subscriber.workspace = true
+
+workspace-hack.workspace = true

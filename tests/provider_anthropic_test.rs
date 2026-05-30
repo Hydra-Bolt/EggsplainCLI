@@ -3,12 +3,12 @@
 use wiremock::matchers::{header, method, path};
 use wiremock::{Mock, MockServer, ResponseTemplate};
 
-use aionrs::provider::anthropic::AnthropicProvider;
-use aionrs::provider::compat::ProviderCompat;
-use aionrs::provider::debug::DebugConfig;
-use aionrs::provider::{LlmProvider, ProviderError};
-use aionrs::types::llm::{LlmEvent, LlmRequest, ThinkingConfig};
-use aionrs::types::message::{ContentBlock, Message, Role, StopReason};
+use eggsplain::provider::anthropic::AnthropicProvider;
+use eggsplain::provider::compat::ProviderCompat;
+use eggsplain::provider::debug::DebugConfig;
+use eggsplain::provider::{LlmProvider, ProviderError};
+use eggsplain::types::llm::{LlmEvent, LlmRequest, ThinkingConfig};
+use eggsplain::types::message::{ContentBlock, Message, Role, StopReason};
 
 // ---------------------------------------------------------------------------
 // Helpers

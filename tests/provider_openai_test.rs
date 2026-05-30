@@ -1,9 +1,9 @@
-use aionrs::provider::LlmProvider;
-use aionrs::provider::compat::ProviderCompat;
-use aionrs::provider::debug::DebugConfig;
-use aionrs::provider::openai::OpenAIProvider;
-use aionrs::types::llm::{LlmEvent, LlmRequest};
-use aionrs::types::message::{ContentBlock, Message, Role, StopReason};
+use eggsplain::provider::LlmProvider;
+use eggsplain::provider::compat::ProviderCompat;
+use eggsplain::provider::debug::DebugConfig;
+use eggsplain::provider::openai::OpenAIProvider;
+use eggsplain::types::llm::{LlmEvent, LlmRequest};
+use eggsplain::types::message::{ContentBlock, Message, Role, StopReason};
 use serde_json::json;
 use wiremock::matchers::{header, method, path};
 use wiremock::{Mock, MockServer, ResponseTemplate};
@@ -469,7 +469,7 @@ async fn test_openai_api_error_non_success_status() {
 
     assert!(result.is_err());
     match result.unwrap_err() {
-        aionrs::provider::ProviderError::Api { status, .. } => {
+        eggsplain::provider::ProviderError::Api { status, .. } => {
             assert_eq!(status, 401);
         }
         e => panic!("expected Api error, got: {:?}", e),
@@ -496,7 +496,7 @@ async fn test_openai_rate_limited() {
 
     assert!(result.is_err());
     match result.unwrap_err() {
-        aionrs::provider::ProviderError::RateLimited { retry_after_ms } => {
+        eggsplain::provider::ProviderError::RateLimited { retry_after_ms } => {
             assert_eq!(retry_after_ms, 5000);
         }
         e => panic!("expected RateLimited error, got: {:?}", e),

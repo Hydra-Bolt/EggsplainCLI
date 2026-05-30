@@ -7,19 +7,19 @@
 cargo build --release
 
 # Binary location
-./target/release/aionrs
+./target/release/eggsplain
 ```
 
 ## Command Format
 
 ```
-aionrs [OPTIONS] [PROMPT]...
+eggsplain [OPTIONS] [PROMPT]...
 ```
 
 - With `PROMPT`: single-shot mode — completes the task and exits
 - Without `PROMPT`: enters interactive REPL mode
 
-> For the full list of CLI parameters, run `aionrs --help`.
+> For the full list of CLI parameters, run `eggsplain --help`.
 
 ### Key Parameters
 
@@ -34,7 +34,7 @@ aionrs [OPTIONS] [PROMPT]...
 | `--json-stream` | JSON Lines mode for host integration |
 | `--resume <id>` | Resume a previous session |
 | `--log-dir <path>` | Enable file logging to the given directory |
-| `--log-level <filter>` | Log level filter (e.g. `debug`, `info`, `aion_providers=debug`) |
+| `--log-level <filter>` | Log level filter (e.g. `debug`, `info`, `eggsplain_providers=debug`) |
 
 ---
 
@@ -43,9 +43,9 @@ aionrs [OPTIONS] [PROMPT]...
 ### Three-Level Cascading
 
 ```
-<global config>                   (global, user-level; run `aionrs --config-path` to find)
+<global config>                   (global, user-level; run `eggsplain --config-path` to find)
     ↓ overridden by
-./.aionrs.toml                  (project-level, working directory)
+./.eggsplain.toml                  (project-level, working directory)
     ↓ overridden by
 CLI parameters / env vars        (highest priority)
 ```
@@ -53,14 +53,14 @@ CLI parameters / env vars        (highest priority)
 ### Generate Default Config
 
 ```bash
-aionrs --init-config
-# Creates the global config file (run `aionrs --config-path` to see the location)
+eggsplain --init-config
+# Creates the global config file (run `eggsplain --config-path` to see the location)
 ```
 
 ### Config File Format
 
 ```toml
-# Global config file (path varies by OS, use `aionrs --config-path` to find)
+# Global config file (path varies by OS, use `eggsplain --config-path` to find)
 
 [default]
 provider = "anthropic"
@@ -105,7 +105,7 @@ allow_list = ["Read", "Grep", "Glob"]
 
 [session]
 enabled = true
-directory = ".aionrs/sessions"
+directory = ".eggsplain/sessions"
 max_sessions = 20
 
 [compact]
@@ -119,7 +119,7 @@ max_entries = 100
 
 [plan]
 enabled = true
-plan_directory = ".aionrs/plans"
+plan_directory = ".eggsplain/plans"
 
 # [logging]
 # enabled = true              # enable file logging (default: false)
@@ -163,24 +163,24 @@ base_url = "https://my-service.example.com/api/openai"
 ### 1. Initialize and Configure
 
 ```bash
-aionrs --init-config
-# Edit the config file (run `aionrs --config-path` to find it), add your API key
+eggsplain --init-config
+# Edit the config file (run `eggsplain --config-path` to find it), add your API key
 ```
 
 ### 2. Single-Shot Mode
 
 ```bash
-aionrs "Read and explain crates/aion-agent/src/engine.rs"
+eggsplain "Read and explain crates/eggsplain-agent/src/engine.rs"
 ```
 
 ### 3. Interactive REPL
 
 ```
-$ aionrs
+$ eggsplain
 
 > Read the file Cargo.toml
      1  [package]
-     2  name = "aionrs"
+     2  name = "eggsplain"
      ...
 [turns: 1 | tokens: 1234 in / 567 out]
 
@@ -198,15 +198,15 @@ REPL commands: `/quit`, `/exit`, or empty line to exit.
 ### 4. Switching Profiles
 
 ```bash
-aionrs --profile deepseek "Fix the bug in main.rs"
-aionrs --profile ollama "Analyze code quality"
+eggsplain --profile deepseek "Fix the bug in main.rs"
+eggsplain --profile ollama "Analyze code quality"
 ```
 
 ### 5. Environment Variables
 
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-xxx
-aionrs "List all Rust files in this project"
+eggsplain "List all Rust files in this project"
 ```
 
 ---
@@ -235,20 +235,20 @@ Allow? [y]es / [n]o / [a]lways / [q]uit > y
 
 ## Session Management
 
-Sessions auto-save to `.aionrs/sessions/`.
+Sessions auto-save to `.eggsplain/sessions/`.
 
 ```bash
 # List saved sessions
-aionrs --list-sessions
+eggsplain --list-sessions
 
 # Resume the latest session
-aionrs --resume latest
+eggsplain --resume latest
 
 # Resume a specific session
-aionrs --resume a1b2c3
+eggsplain --resume a1b2c3
 
 # Create a session with a custom ID
-aionrs --session-id my-conv-123
+eggsplain --session-id my-conv-123
 ```
 
 - `--session-id` and `--resume` are mutually exclusive

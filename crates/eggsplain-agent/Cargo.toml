@@ -1,0 +1,55 @@
+[package]
+name = "eggsplain-agent"
+description = "Agent engine, session management, output sinks, and orchestration for eggsplain"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+eggsplain-types.workspace     = true
+eggsplain-protocol.workspace  = true
+eggsplain-config.workspace    = true
+eggsplain-providers.workspace = true
+eggsplain-tools.workspace     = true
+eggsplain-mcp.workspace       = true
+eggsplain-skills.workspace    = true
+eggsplain-memory.workspace    = true
+eggsplain-compact.workspace   = true
+
+tracing.workspace     = true
+tokio.workspace       = true
+futures.workspace     = true
+serde.workspace       = true
+serde_json.workspace  = true
+async-trait.workspace = true
+anyhow.workspace      = true
+thiserror.workspace   = true
+glob.workspace        = true
+chrono.workspace      = true
+dirs.workspace        = true
+crossterm.workspace   = true
+is-terminal.workspace = true
+
+workspace-hack.workspace = true
+
+[dev-dependencies]
+eggsplain-mcp = { path = "../eggsplain-mcp", features = ["test-utils"] }
+wiremock.workspace    = true
+tokio-test.workspace  = true
+tempfile.workspace    = true
+mockall.workspace     = true
+rstest.workspace      = true
+serial_test.workspace = true
+
+# ── Integration test binaries ──────────────────────────────────────────────
+[[test]]
+name = "e2e"
+path = "tests/e2e/mod.rs"
+# E2E tests require real API keys; run via: cargo nextest run --profile e2e --test e2e
+
+[[test]]
+name = "acceptance"
+path = "tests/acceptance/mod.rs"
+# Acceptance tests for evolution features; run via: cargo nextest run --profile e2e --test acceptance
+

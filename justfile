@@ -1,4 +1,4 @@
-# aionrs justfile — run tasks with `vx just <recipe>`
+# eggsplain justfile — run tasks with `vx just <recipe>`
 # All commands route through `vx` so the correct tool versions are used.
 
 # Cross-platform shell defaults for linewise recipes.
@@ -41,22 +41,22 @@ test-e2e:
     vx cargo nextest run --workspace --profile e2e --test e2e
 
 test-e2e-anthropic:
-    vx cargo nextest run -p aion-agent --profile e2e --test e2e -E 'test(anthropic)'
+    vx cargo nextest run -p eggsplain-agent --profile e2e --test e2e -E 'test(anthropic)'
 
 test-e2e-openai:
-    vx cargo nextest run -p aion-agent --profile e2e --test e2e -E 'test(openai)'
+    vx cargo nextest run -p eggsplain-agent --profile e2e --test e2e -E 'test(openai)'
 
 # ── Acceptance Tests (evolution feature validation) ───────────────────────
 # Requires env vars: OPENAI_API_KEY and/or AWS_PROFILE + CLAUDE_CODE_USE_BEDROCK=1
 # Reuses the e2e nextest profile (sequential, long timeout, no retry)
 test-acceptance:
-    vx cargo nextest run -p aion-agent --profile e2e --test acceptance
+    vx cargo nextest run -p eggsplain-agent --profile e2e --test acceptance
 
 test-acceptance-memory:
-    vx cargo nextest run -p aion-agent --profile e2e --test acceptance -E 'test(memory)'
+    vx cargo nextest run -p eggsplain-agent --profile e2e --test acceptance -E 'test(memory)'
 
 test-acceptance-compact:
-    vx cargo nextest run -p aion-agent --profile e2e --test acceptance -E 'test(compact)'
+    vx cargo nextest run -p eggsplain-agent --profile e2e --test acceptance -E 'test(compact)'
 
 # ── Lint / Format ─────────────────────────────────────────────────────────
 lint:
@@ -88,10 +88,10 @@ coverage:
     vx cargo llvm-cov nextest --workspace --profile ci --lcov --output-path lcov.info
 
 # ── Release ───────────────────────────────────────────────────────────────
-aion_version := `vx cargo pkgid -p aion-cli | sed 's/.*#//'`
+eggsplain_version := `vx cargo pkgid -p eggsplain-cli | sed 's/.*#//'`
 
 version:
-    @echo '{{ aion_version }}'
+    @echo '{{ eggsplain_version }}'
 
 # ── Clean ─────────────────────────────────────────────────────────────────
 clean:

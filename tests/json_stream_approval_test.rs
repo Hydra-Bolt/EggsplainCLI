@@ -4,14 +4,14 @@ use std::sync::Arc;
 
 use serde_json::json;
 
-use aionrs::engine::AgentEngine;
-use aionrs::output::OutputSink;
-use aionrs::output::terminal::TerminalSink;
-use aionrs::protocol::{ToolApprovalManager, ToolApprovalResult};
-use aionrs::protocol::writer::ProtocolWriter;
-use aionrs::tools::registry::ToolRegistry;
-use aionrs::types::llm::LlmEvent;
-use aionrs::types::message::{StopReason, TokenUsage};
+use eggsplain::engine::AgentEngine;
+use eggsplain::output::OutputSink;
+use eggsplain::output::terminal::TerminalSink;
+use eggsplain::protocol::{ToolApprovalManager, ToolApprovalResult};
+use eggsplain::protocol::writer::ProtocolWriter;
+use eggsplain::tools::registry::ToolRegistry;
+use eggsplain::types::llm::LlmEvent;
+use eggsplain::types::message::{StopReason, TokenUsage};
 
 use common::{ExecMockTool, MockLlmProvider, test_config};
 

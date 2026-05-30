@@ -2,13 +2,13 @@ mod common;
 
 use std::sync::Arc;
 
-use aionrs::engine::{AgentEngine, AgentError};
-use aionrs::output::terminal::TerminalSink;
-use aionrs::output::OutputSink;
-use aionrs::session::SessionManager;
-use aionrs::tools::registry::ToolRegistry;
-use aionrs::types::llm::LlmEvent;
-use aionrs::types::message::{StopReason, TokenUsage};
+use eggsplain::engine::{AgentEngine, AgentError};
+use eggsplain::output::terminal::TerminalSink;
+use eggsplain::output::OutputSink;
+use eggsplain::session::SessionManager;
+use eggsplain::tools::registry::ToolRegistry;
+use eggsplain::types::llm::LlmEvent;
+use eggsplain::types::message::{StopReason, TokenUsage};
 use serde_json::json;
 use tempfile::tempdir;
 

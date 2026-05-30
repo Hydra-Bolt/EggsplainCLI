@@ -1,9 +1,9 @@
 mod common;
 
-use aionrs::hooks::{HookDef, HookEngine, HooksConfig};
-use aionrs::tools::orchestration::execute_tool_calls;
-use aionrs::tools::registry::ToolRegistry;
-use aionrs::types::message::ContentBlock;
+use eggsplain::hooks::{HookDef, HookEngine, HooksConfig};
+use eggsplain::tools::orchestration::execute_tool_calls;
+use eggsplain::tools::registry::ToolRegistry;
+use eggsplain::types::message::ContentBlock;
 use common::{auto_approve_confirmer, MockTool};
 use serde_json::json;
 

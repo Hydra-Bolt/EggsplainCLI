@@ -1,0 +1,10 @@
+// Pure, provider-neutral data types shared across all eggsplain crates.
+// No dependencies on other eggsplain-* crates.
+
+pub mod compact;
+pub mod file_state;
+pub mod llm;
+pub mod message;
+pub mod skill_types;
+pub mod spawner;
+pub mod tool;

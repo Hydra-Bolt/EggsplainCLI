@@ -1,0 +1,28 @@
+[package]
+name = "eggsplain-mcp"
+description = "MCP (Model Context Protocol) client implementation for eggsplain"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+eggsplain-types.workspace    = true
+eggsplain-protocol.workspace = true
+eggsplain-tools.workspace    = true
+eggsplain-config.workspace   = true
+
+tracing.workspace     = true
+tokio.workspace       = true
+serde.workspace       = true
+serde_json.workspace  = true
+async-trait.workspace = true
+thiserror.workspace   = true
+anyhow.workspace      = true
+reqwest.workspace     = true
+futures.workspace     = true
+
+workspace-hack.workspace = true
+
+[features]
+test-utils = []

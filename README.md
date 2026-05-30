@@ -1,4 +1,4 @@
-# aionrs
+# eggsplain
 
 A Rust-based LLM tool-use agent for the command line. It connects to LLM APIs, autonomously invokes local tools (file I/O, shell, search, etc.), and completes tasks end-to-end.
 
@@ -31,17 +31,17 @@ A Rust-based LLM tool-use agent for the command line. It connects to LLM APIs, a
 cargo build --release
 
 # Generate default config, then add your API key
-./target/release/aionrs --init-config
-# Edit the generated config (run `aionrs --config-path` to find it)
+./target/release/eggsplain --init-config
+# Edit the generated config (run `eggsplain --config-path` to find it)
 
 # Single-shot mode
-aionrs "Read Cargo.toml and explain the dependencies"
+eggsplain "Read Cargo.toml and explain the dependencies"
 
 # Interactive REPL
-aionrs
+eggsplain
 
 # Full CLI reference
-aionrs --help
+eggsplain --help
 ```
 
 ## Architecture

@@ -28,8 +28,8 @@
 worktree/
 worktrees/
 
-# aionrs session data
-.aionrs/
+# eggsplain session data
+.eggsplain/
 
 # Debug artifacts
 *.pdb

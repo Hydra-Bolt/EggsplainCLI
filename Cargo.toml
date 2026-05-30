@@ -1,17 +1,17 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/aion-types",
-    "crates/aion-protocol",
-    "crates/aion-compact",
-    "crates/aion-config",
-    "crates/aion-providers",
-    "crates/aion-tools",
-    "crates/aion-mcp",
-    "crates/aion-skills",
-    "crates/aion-memory",
-    "crates/aion-agent",
-    "crates/aion-cli",
+    "crates/eggsplain-types",
+    "crates/eggsplain-protocol",
+    "crates/eggsplain-compact",
+    "crates/eggsplain-config",
+    "crates/eggsplain-providers",
+    "crates/eggsplain-tools",
+    "crates/eggsplain-mcp",
+    "crates/eggsplain-skills",
+    "crates/eggsplain-memory",
+    "crates/eggsplain-agent",
+    "crates/eggsplain-cli",
     "workspace-hack",
 ]
 
@@ -19,20 +19,20 @@ members = [
 version = "0.1.27"
 edition = "2024"
 license = "Apache-2.0"
-repository = "https://github.com/iOfficeAI/aionrs"
+repository = "https://github.com/iOfficeAI/eggsplain"
 
 [workspace.dependencies]
 # Internal crates
-aion-types     = { path = "crates/aion-types" }
-aion-protocol  = { path = "crates/aion-protocol" }
-aion-compact   = { path = "crates/aion-compact" }
-aion-config    = { path = "crates/aion-config" }
-aion-providers = { path = "crates/aion-providers" }
-aion-tools     = { path = "crates/aion-tools" }
-aion-mcp       = { path = "crates/aion-mcp" }
-aion-skills    = { path = "crates/aion-skills" }
-aion-memory    = { path = "crates/aion-memory" }
-aion-agent     = { path = "crates/aion-agent" }
+eggsplain-types     = { path = "crates/eggsplain-types" }
+eggsplain-protocol  = { path = "crates/eggsplain-protocol" }
+eggsplain-compact   = { path = "crates/eggsplain-compact" }
+eggsplain-config    = { path = "crates/eggsplain-config" }
+eggsplain-providers = { path = "crates/eggsplain-providers" }
+eggsplain-tools     = { path = "crates/eggsplain-tools" }
+eggsplain-mcp       = { path = "crates/eggsplain-mcp" }
+eggsplain-skills    = { path = "crates/eggsplain-skills" }
+eggsplain-memory    = { path = "crates/eggsplain-memory" }
+eggsplain-agent     = { path = "crates/eggsplain-agent" }
 
 # Async runtime
 tokio   = { version = "1", features = ["full"] }

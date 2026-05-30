@@ -70,9 +70,9 @@ mcp_servers = ["filesystem", "github"]
 ### Usage
 
 ```bash
-aionrs --profile claude-fast "Quick question"
-aionrs --profile claude-deep "Deep security audit"
-aionrs --profile dev "Create a GitHub issue"
+eggsplain --profile claude-fast "Quick question"
+eggsplain --profile claude-deep "Deep security audit"
+eggsplain --profile dev "Create a GitHub issue"
 ```
 
 - Supports multi-level inheritance chains
@@ -162,18 +162,18 @@ Use your Claude.ai subscription (Pro/Team/Enterprise) directly — no API key ne
 ### Login
 
 ```bash
-aionrs --login
+eggsplain --login
 ```
 
 1. Displays an authorization URL and code
 2. Open the URL in your browser and enter the code
-3. Credentials are saved alongside the global config (run `aionrs --config-path` to find the directory)
+3. Credentials are saved alongside the global config (run `eggsplain --config-path` to find the directory)
 4. Subsequent runs auto-load saved credentials (with auto-refresh)
 
 ### Logout
 
 ```bash
-aionrs --logout
+eggsplain --logout
 ```
 
 ### Configuring OAuth Endpoints
@@ -182,5 +182,5 @@ aionrs --logout
 [auth]
 auth_url = "https://claude.ai/oauth"
 token_url = "https://claude.ai/oauth/token"
-client_id = "aionrs"
+client_id = "eggsplain"
 ```

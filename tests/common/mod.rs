@@ -7,16 +7,16 @@ use async_trait::async_trait;
 use serde_json::{Value, json};
 use tokio::sync::mpsc;
 
-use aionrs::confirm::ToolConfirmer;
-use aionrs::protocol::events::ToolCategory;
-use aionrs::config::{Config, ProviderType, ToolsConfig, SessionConfig};
-use aionrs::hooks::HooksConfig;
-use aionrs::mcp::config::McpConfig;
-use aionrs::provider::{LlmProvider, ProviderError};
-use aionrs::tools::Tool;
-use aionrs::types::llm::{LlmEvent, LlmRequest};
-use aionrs::types::message::{StopReason, TokenUsage};
-use aionrs::types::tool::ToolResult;
+use eggsplain::confirm::ToolConfirmer;
+use eggsplain::protocol::events::ToolCategory;
+use eggsplain::config::{Config, ProviderType, ToolsConfig, SessionConfig};
+use eggsplain::hooks::HooksConfig;
+use eggsplain::mcp::config::McpConfig;
+use eggsplain::provider::{LlmProvider, ProviderError};
+use eggsplain::tools::Tool;
+use eggsplain::types::llm::{LlmEvent, LlmRequest};
+use eggsplain::types::message::{StopReason, TokenUsage};
+use eggsplain::types::tool::ToolResult;
 
 // ---------------------------------------------------------------------------
 // MockLlmProvider — deterministic LLM for engine / spawn tests
@@ -247,19 +247,19 @@ pub fn test_config() -> Config {
         system_prompt: Some("You are a test assistant.".to_string()),
         thinking: None,
         prompt_caching: false,
-        compat: aionrs::provider::compat::ProviderCompat::anthropic_defaults(),
+        compat: eggsplain::provider::compat::ProviderCompat::anthropic_defaults(),
         tools: ToolsConfig {
             auto_approve: true,
             allow_list: vec![],
-            skills: aionrs::config::SkillsPermissionConfig::default(),
+            skills: eggsplain::config::SkillsPermissionConfig::default(),
         },
         session: SessionConfig {
             enabled: false,
-            directory: "/tmp/aionrs-test-sessions".to_string(),
+            directory: "/tmp/eggsplain-test-sessions".to_string(),
             max_sessions: 5,
         },
-        compact: aionrs::config::CompactConfig::default(),
-        plan: aionrs::config::PlanConfig::default(),
+        compact: eggsplain::config::CompactConfig::default(),
+        plan: eggsplain::config::PlanConfig::default(),
         hooks: HooksConfig::default(),
         bedrock: None,
         vertex: None,
